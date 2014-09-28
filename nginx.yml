@@ -8,9 +8,12 @@
 
     - name: Upload default index.html for host
       copy: src=/root/website/Main.html dest=/usr/share/nginx/html/ mode=0644
-      
-    - htpasswd: path=/etc/nginx/.htpasswd name=admin password=user;fyNp owner=root group=www-data mode=0640  
-      
+
+    - name: Upload default index.html for host
+      pacman: pkg=python2-passlib state=present
+
+    - htpasswd: path=/etc/nginx/.htpasswd name=admin password=user123
+
 
   handlers:
     - name: start nginx
