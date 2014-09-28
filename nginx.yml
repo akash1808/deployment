@@ -8,6 +8,9 @@
 
     - name: Upload default index.html for host
       copy: src=/root/website/Main.html dest=/usr/share/nginx/html/ mode=0644
+      
+    - htpasswd: path=/etc/nginx/.htpasswd name=admin password=user;fyNp owner=root group=www-data mode=0640  
+      
 
   handlers:
     - name: start nginx
