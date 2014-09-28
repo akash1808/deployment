@@ -12,7 +12,7 @@
     - name: Upload default index.html for host
       pacman: pkg=python2-passlib state=present
 
-    - htpasswd: path=/etc/nginx/.htpasswd name=admin password=user123
+    - htpasswd: path=/etc/nginx/.htpasswd name=admin password=user12356
 
 
   handlers:
